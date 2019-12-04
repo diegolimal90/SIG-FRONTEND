@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './components/header.js';
+import Header from './components/fragment/Header';
 
 
 function App() {
