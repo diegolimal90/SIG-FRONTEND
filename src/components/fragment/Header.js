@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import { Navbar, Icon, NavItem, Dropdown, Divider } from 'react-materialize';
+import { Navbar, Icon, NavItem, Dropdown, Divider, SideNav, Button, SideNavItem } from 'react-materialize';
+import logoNova from '../../assets/images/logo.png';
+
 
 class Header extends Component {
 
     render() {
         return (
-            <Navbar
+            <Navbar 
+                className="grey"
                 alignLinks="right"
-                brand={<a className="brand-logo" href="#">Logo</a>}
-                menuIcon={<Icon>menu</Icon>}
+                brand={<a className="brand-logo" href="#"><img className="logo-nova" src={logoNova}/></a>}
+                menuIcon={<Icon>i</Icon>}
                 options={{
                     draggable: true,
                     edge: 'left',
@@ -21,41 +24,41 @@ class Header extends Component {
                     preventScrolling: true
                 }}
             >
-                <NavItem href="">
-                    Getting started
-  </NavItem>
-                <NavItem href="components.html">
-                    Components
-  </NavItem>
-                <Dropdown
+                <SideNav
                     options={{
-                        alignment: 'left',
-                        autoTrigger: true,
-                        closeOnClick: true,
-                        constrainWidth: true,
-                        container: null,
-                        coverTrigger: true,
-                        hover: false,
-                        inDuration: 150,
-                        onCloseEnd: null,
-                        onCloseStart: null,
-                        onOpenEnd: null,
-                        onOpenStart: null,
-                        outDuration: 250
+                    closeOnClick: true,
+                    edge: 'right'
                     }}
-                    trigger={<a href="#!">Dropdown{' '}<Icon right>arrow_drop_down</Icon></a>}
+                    trigger={<a>Usuário <div className="img-perfil--usuario"></div></a>}
                 >
-                    <a href="#">
-                        one
-    </a>
-                    <a href="#">
-                        two
-    </a>
-                    <Divider />
-                    <a href="#">
-                        three
-    </a>
-                </Dropdown>
+                    <SideNavItem
+                        user={{
+                            background: 'https://placeimg.com/640/480/tech',
+                            email: 'renan.scalanti@hotmail.com',
+                            name: 'Renan Scalanti'
+                        }}
+                    userView
+                    />
+                    <SideNavItem>
+                        Profissionais
+                    </SideNavItem>
+                    <SideNavItem href="#!second">
+                        Equipes
+                    </SideNavItem>
+                    <SideNavItem divider />
+                    <SideNavItem subheader>
+                        Cadastros
+                    </SideNavItem>
+                    <SideNavItem
+                        href="#!third"
+                        waves
+                    >
+                        Cadastro de profissional
+                    </SideNavItem>
+                    <SideNavItem>
+                        Cadastro de viatura
+                    </SideNavItem>
+                </SideNav>                
             </Navbar>
         );
     }
