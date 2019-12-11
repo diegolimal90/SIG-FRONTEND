@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Header from './components/fragment/Header';
 import Footer from './components/fragment/Footer';
 import montarEquipe from './assets/images/montarEquipe-icone.png';
@@ -11,10 +12,50 @@ import usuario from './assets/images/usuario.png';
 import paciente from './assets/images/paciente.png';
 import perfilEquipe from './assets/images/perfilEquipe.png';
 
+const routes = [
+  {
+    path: "/montar-equipe",
+    component: montarEquipe
+  },
+  {
+    path: "/viatura",
+    component: viatura,
+  },
+  {
+    path: "/profissionais",
+    component: profissional,
+  },
+  {
+    path: "/clientes",
+    component: cliente,
+  },
+  {
+    path: "/bases-e-unidades",
+    component: unidade,
+  },
+  {
+    path: "/captacao-de-chamados",
+    component: captacao,
+  },
+  {
+    path: "/usuarios",
+    component: usuario,
+  },
+  {
+    path: "/pacientes",
+    component: paciente,
+  },
+  {
+    path: "/perfil-de-equipes",
+    component: perfilEquipe,
+  },
+];
+
 
 
 function App() {
   return (
+    <Router>
     <div>
       <Header />
       <div className="container">
@@ -23,67 +64,68 @@ function App() {
         </div>
         <div className="row botoes-menu m-0">
           <div className="col s2 p-0 offset-s3 center">
-            <button>
+            <Link to="/montar-equipe"><button>
               <img className="icone" src={montarEquipe} />
               <p className="center">Montar equipe</p>
-            </button>
+            </button></Link>
           </div>
           <div className="col s2 p-0">
-            <button>
-              <img className="icone" src={viatura} />
+          <Link to="/viatura"><button>
+            <img className="icone" src={viatura} />
               <p>Viatura</p>
-            </button>
+            </button></Link>
           </div>
           <div className="col s2 p-0">
-            <button>
-              <img className="icone" src={profissional} />
+          <Link to="/profissionais"><button>
+            <img className="icone" src={profissional} />
               <p>Profissionais</p>
-            </button>
+            </button></Link>
           </div>
         </div>
         <div className="row botoes-menu m-0">
           <div className="col s2 p-0 offset-s3">
-            <button>
+          <Link to="/clientes"><button>
               <img className="icone" src={cliente} />
               <p>Clientes</p>
-            </button>
+            </button></Link>
           </div>
           <div className="col s2 p-0">
-            <button>
+          <Link to="/bases-e-unidades"><button>
               <img className="icone" src={unidade} />
               <p>Bases e unidades</p>
-            </button>
+            </button></Link>
           </div>
           <div className="col s2 p-0">
-            <button>
+          <Link to="/captacao-de-chamados"><button>
               <img className="icone" src={captacao} />
               <p>Captação de chamados</p>
-            </button>
+            </button></Link>
           </div>
         </div>
         <div className="row botoes-menu m-0">
           <div className="col s2 p-0 offset-s3">
-            <button>
+          <Link to="/usuarios"><button>
               <img className="icone" src={usuario} />
               <p>Usuários</p>
-            </button>
+            </button></Link>
           </div>
           <div className="col s2 p-0">
-            <button>
+          <Link to="/pacientes"> <button>
               <img className="icone" src={paciente} />
               <p>Pacientes</p>
-            </button>
+            </button></Link>
           </div>
           <div className="col s2 p-0">
-            <button>
+          <Link to="/perfil-de-equipes"><button>
             <img className="icone" src={perfilEquipe} />
               <p>Perfril de equipe</p>
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>
       <Footer />
     </div>
+    </Router>
   );
 }
 
