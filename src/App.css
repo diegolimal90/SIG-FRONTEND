@@ -49,17 +49,17 @@ footer {
     background-color: grey;
 }
 
-.titulo {
-    font-size: 25px;
-    text-transform: uppercase;
+hr {
+    margin: 0 0 30px 0;
 }
 
 .botoes-menu button {
     position: relative;
-    width: 100%;
+    width: 90%;
     height: 150px;
-    background-color:rgb(255, 94, 0);
-    border: 2px solid white; 
+    background-color:white;
+    border: 7px solid rgb(255, 94, 0); 
+    border-radius: 100%;
     transition: all 0.2s linear;
     cursor: pointer;   
 }
@@ -68,14 +68,6 @@ footer {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-}
-
-.botoes-menu button:hover {
-    transform: scale(1.2);
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    transition: all 0.2s linear;
-    filter: invert(1);
-    z-index: 9;
 }
 
 .icone {
