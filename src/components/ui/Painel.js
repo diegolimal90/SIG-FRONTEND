@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import Horario from '../fragment/Horario';
 import Header from '../fragment/Header';
 import Footer from '../fragment/Footer';
 import montarEquipe from '../../assets/images/montarEquipe-icone.png';
@@ -22,7 +23,7 @@ function Painel() {
                     <h6>Painel de Controle</h6>
                 </div>
                 <div className="col s6">
-                    <p className="right">Olá, Usuário 00:00h</p>
+                    <p className="right">Olá, Usuário  <Horario /></p>
                 </div>
             </div>
             <hr />
@@ -92,5 +93,6 @@ function Painel() {
         </div>
     );
 }
+  
 
 export default Painel;
