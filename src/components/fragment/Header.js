@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, Icon, NavItem, Dropdown, Divider, SideNav, Button, SideNavItem } from 'react-materialize';
+import { Navbar, Icon, SideNav, SideNavItem } from 'react-materialize';
 import logoNova from '../../assets/images/logo.png';
 
 
