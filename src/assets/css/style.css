@@ -55,7 +55,7 @@ hr {
 
 .botoes-menu button {
     position: relative;
-    width: 90%;
+    width: 150px;
     height: 150px;
     background-color:white;
     border: 7px solid rgb(255, 94, 0); 

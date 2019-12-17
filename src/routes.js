@@ -38,15 +38,11 @@ function RouteRender() {
     return (
         <div>
             <Header />
-            <div className="row m-0">
-                <div className="col s6">
                     <Switch>
                         {routes.map((route, i) => (
                             <RouteWithSubRoutes key={i} {...route} />
                         ))}
                     </Switch>
-                </div>
-            </div>
             <Footer />
         </div>
     );
