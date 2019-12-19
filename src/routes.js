@@ -3,21 +3,18 @@ import { Switch, Route } from 'react-router-dom'
 import Header from "./components/fragment/Header";
 import Footer from "./components/fragment/Footer";
 import TelaPrincipal from "./pages/TelaPrincipal";
+import PerfilEquipe from "./pages/PerfilEquipe";
 
 const routes = [
     {
         path: "/painel",
         component: TelaPrincipal,
         routes: [
-            {
-                path: "/painel/viatura",
-                component: "App"
-            },
-            {
-                path: "/painel/exemple1",
-                component: "App"
-            }
         ],
+    },
+    {
+        path: "/perfil-de-equipe",
+        component: PerfilEquipe
     }
 ];
 

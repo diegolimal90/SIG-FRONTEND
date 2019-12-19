@@ -78,3 +78,14 @@ hr {
 .texto-sigma {
     margin: 20px;
 }
+
+.MuiInputLabel-formControl {
+    position: inherit !important;
+}
+
+.btn-salvar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+}

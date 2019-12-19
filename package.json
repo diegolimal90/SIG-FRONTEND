@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.8.0",
     "classnames": "^2.2.6",
     "jquery": "^3.4.1",
     "materialize-css": "^1.0.0",
