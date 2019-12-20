@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 
-class TelaPrincipal extends Component{
-    constructor(){
-        super();
-    }
+class TelaPrincipal extends Component {
 
     render() {
-        return <h2>teste</h2>
+        return (
+            <div> TelaPrincipal </div>
+        );
     }
-}
 
+}
 export default TelaPrincipal;
