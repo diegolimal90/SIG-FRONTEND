@@ -4,6 +4,7 @@ import Header from "./components/fragment/Header";
 import Footer from "./components/fragment/Footer";
 import TelaPrincipal from "./pages/TelaPrincipal";
 import PerfilEquipe from "./pages/PerfilEquipe";
+import Viatura from "./pages/Viatura";
 
 const routes = [
     {
@@ -15,6 +16,10 @@ const routes = [
     {
         path: "/perfil-de-equipe",
         component: PerfilEquipe
+    },
+    {
+        path: "/viaturas",
+        component: Viatura
     }
 ];
 
