@@ -9,11 +9,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-        {/* <div className="row m-0"> */}
-          {/* <div className="col s6"> */}
+        <div className="row m-0">
+          <div className="col s12">
             <SubRoutes />
-          {/* </div> */}
-        {/* </div> */}
+          </div>
+        </div>
         <Footer />
       </div>
     );
