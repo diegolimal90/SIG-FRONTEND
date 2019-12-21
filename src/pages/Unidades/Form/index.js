@@ -1,6 +1,6 @@
-import React , {UseState, useState} from "react";
+import React , {useState} from "react";
 import {TextInput,Textarea, Select, Button, Icon} from "react-materialize";
-
+import {Link} from "react-router-dom";
 import OptionUF from "./options.js";
 import api from "../../../service/api";
 
@@ -50,7 +50,8 @@ function ViaturaForm(){
         </div>
         
         <div className="row">
-          <Select label="Tipo de Unidade" value={tipo} onChange={function noRefCheck(){}, event => setTipo(event.target.value)} s={6} required>
+          <Select label="Tipo de Unidade" value={tipo} onChange={event => setTipo(event.target.value)} s={6} required>
+            <option value="">Selecione...</option>
             <option value="base">Base</option>
             <option value="unidade">Unidade</option>
           </Select>
@@ -59,7 +60,7 @@ function ViaturaForm(){
             name="nome"
             s="6"
             type="text"
-            maxlength="65"
+            maxLength="65"
             required
             validate="true"
             label="Nome Unidade"
@@ -73,7 +74,7 @@ function ViaturaForm(){
             type="number"
             min="0"
             max="99999999"
-            maxlength="8"
+            maxLength="8"
             required
             validate="true"
             label="CEP"
@@ -85,7 +86,7 @@ function ViaturaForm(){
             name="tipo_logradouro"
             s="3"
             type="text"
-            maxlength="12"
+            maxLength="12"
             required
             validate="true"
             label="Tipo Logradouro"
@@ -97,7 +98,7 @@ function ViaturaForm(){
             name="logradouro"
             s="6"
             type="text"
-            maxlength="50"
+            maxLength="50"
             required
             validate="true"
             label="Logradouro"
@@ -109,7 +110,7 @@ function ViaturaForm(){
             name="numero"
             s="3"
             type="number"
-            maxlength="10"
+            maxLength="10"
             min="0"
             max="9999999999"
             required
@@ -123,13 +124,14 @@ function ViaturaForm(){
             name="complemento"
             s="3"
             type="text"
-            maxlength="50"
+            maxLength="50"
             validate="true"
             label="Complemento"
             value={complemento}
             onChange={event => setComplemento(event.target.value)}
           />
           <Select label="Estado/UF" value={estado} onChange={event => setEstado(event.target.value)} s="6" required>
+            <option value="">Selecione...</option>
             <OptionUF />
           </Select>
           <TextInput
@@ -137,7 +139,7 @@ function ViaturaForm(){
             name="cidade"
             s="4"
             type="text"
-            maxlength="50"
+            maxLength="50"
             required
             validate="true"
             label="Cidade"
@@ -149,7 +151,7 @@ function ViaturaForm(){
             name="regiao"
             s="4"
             type="text"
-            maxlength="30"
+            maxLength="30"
             required
             validate="true"
             label="Região"
@@ -161,7 +163,7 @@ function ViaturaForm(){
             name="bairro"
             s="4"
             type="text"
-            maxlength="30"
+            maxLength="30"
             required
             validate="true"
             label="Bairro"
@@ -173,7 +175,7 @@ function ViaturaForm(){
             s={12}
             name="referencia"
             id="referencia"
-            maxlength="200"
+            maxLength="200"
             value={referencia}
             onChange={event => setReferencia(event.target.value)}
           />
@@ -204,6 +206,17 @@ function ViaturaForm(){
           delete
         </Icon>
         </Button>
+        <Link to="/dashboard">
+          <Button
+            waves="light"
+            className="btn orange darken-4" 
+          >
+            Cancelar
+            <Icon right>
+              cancel
+            </Icon>
+          </Button>
+        </Link>
       </div>
     </div>
   </form>
