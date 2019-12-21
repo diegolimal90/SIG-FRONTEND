@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../../service/api';
 import { TextInput, Button, Icon } from "react-materialize";
+import { Link } from 'react-router-dom';
 import '../../../assets/css/style.css';
 
 function Viatura({ history }) {
@@ -39,7 +40,7 @@ function Viatura({ history }) {
         // await api.post('/viaturas', data, {
         // headers: { user_id }
         // });
-        
+
         history.push('/dashboard');
     }
 
@@ -134,7 +135,7 @@ function Viatura({ history }) {
                     >
                     Salvar
                     <Icon right>
-                        send
+                        save
                     </Icon>
                     </Button>
                     
@@ -149,6 +150,19 @@ function Viatura({ history }) {
                         delete
                     </Icon>
                     </Button>
+                    
+                    <Link to="/dashboard">
+                        <Button
+                        node="button"
+                        waves="light"
+                        className="btn orange darken-4"
+                        >
+                        Cancelar
+                        <Icon right>
+                            cancel
+                        </Icon>
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </form>
