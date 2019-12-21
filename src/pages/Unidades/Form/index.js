@@ -1,5 +1,6 @@
 import React from "react";
-import {Textarea, Select} from "react-materialize";
+import {TextInput,Textarea, Select, Button, Icon} from "react-materialize";
+import OptionUF from "./options.js";
 import '../../../assets/css/style.css';
 
 function ViaturaForm(){
@@ -12,58 +13,137 @@ function ViaturaForm(){
         </div>
         
         <div className="row">
-          <Select label="Tipo de Unidade" onChange={function noRefCheck(){}} s={6}>
+          <Select label="Tipo de Unidade" onChange={function noRefCheck(){}} s={6} required>
             <option value="1">Base</option>
             <option value="2">Unidade</option>
           </Select>
-          <div className="col s6 input-field">
-            <input id="nome" type="text" className="validate" />
-            <label htmlFor="nome">Nome da Unidade</label>
-          </div>
-          <div className="col s3 input-field">
-            <input id="cep" type="number" className="validate" />
-            <label htmlFor="cep">CEP</label>
-          </div>
-          <div className="col s3 input-field">
-            <input id="tipo_logradouro" type="number" className="validate" />
-            <label htmlFor="tipo_logradouro">Tipo de Logradouro</label>
-          </div>
-          <div className="col s6 input-field">
-            <input id="logradouro" type="text" className="validate" />
-            <label htmlFor="logradouro">Logradouro</label>
-          </div>
-          <div className="col s3 input-field">
-            <input id="numero" type="text" className="validate" />
-            <label htmlFor="numero">Número</label>
-          </div>
-          <div className="col s3 input-field">
-            <input id="complemento" type="text" className="validate" />
-            <label htmlFor="complemento">Complemento</label>
-          </div>
-          <Select label="Estado/UF" onChange={function noRefCheck(){}} s={6}>
-            <option>Estados</option>
+          <TextInput
+            id="nome"
+            name="nome"
+            s="6"
+            type="text"
+            maxlength="65"
+            required
+            validate="true"
+            label="Nome Unidade"
+          />
+          <TextInput
+            id="cep"
+            name="cep"
+            s="3"
+            type="number"
+            min="0"
+            max="99999999"
+            maxlength="8"
+            required
+            validate="true"
+            label="CEP"
+          />
+          <TextInput
+            id="tipo_logradouro"
+            name="tipo_logradouro"
+            s="3"
+            type="text"
+            maxlength="12"
+            required
+            validate="true"
+            label="Tipo Logradouro"
+          />
+          <TextInput
+            id="logradouro"
+            name="logradouro"
+            s="6"
+            type="text"
+            maxlength="50"
+            required
+            validate="true"
+            label="Logradouro"
+          />
+          <TextInput
+            id="numero"
+            name="numero"
+            s="3"
+            type="number"
+            maxlength="10"
+            min="0"
+            max="9999999999"
+            required
+            validate="true"
+            label="Número"
+          />
+          <TextInput
+            id="complemento"
+            name="complemento"
+            s="3"
+            type="text"
+            maxlength="50"
+            validate="true"
+            label="Complemento"
+          />
+          <Select label="Estado/UF" onChange={function noRefCheck(){}} s="6" required>
+            <OptionUF />
           </Select>
-          <div className="col s4 input-field">
-            <input id="cidade" type="text" className="validate" />
-            <label htmlFor="cidade">Cidade</label>
-          </div>
-          <div className="col s4 input-field">
-            <input id="regiao" type="text" className="validate" />
-            <label htmlFor="regiao">Região</label>
-          </div>
-          <div className="col s4 input-field">
-            <input id="bairro" type="text" className="validate" />
-            <label htmlFor="bairro">Bairro</label>
-          </div>
-          <Textarea label="Ponto de Referência" s={12}/>
+          <TextInput
+            id="cidade"
+            name="cidade"
+            s="4"
+            type="text"
+            maxlength="50"
+            required
+            validate="true"
+            label="Cidade"
+          />
+          <TextInput
+            id="regiao"
+            name="regiao"
+            s="4"
+            type="text"
+            maxlength="30"
+            required
+            validate="true"
+            label="Região"
+          />
+          <TextInput
+            id="bairro"
+            name="bairro"
+            s="4"
+            type="text"
+            maxlength="30"
+            required
+            validate="true"
+            label="Bairro"
+          />
+          <Textarea 
+            label="Ponto de Referência" 
+            s={12}
+          />
         </div>
         
-        <div className="row btn-salvar">
-        <button class="btn waves-effect waves-light orange darken-4" type="submit" name="action">Salvar
-          <i class="material-icons right">send</i>
-        </button>
-
-        <button class="btn waves-effect waves-light orange darken-4" type="reset">Limpar</button>
+      <div className="row btn-salvar">
+        <Button
+          node="button"
+          type="submit"
+          waves="light"
+          className="btn orange darken-4"
+          name="action"
+        >
+          Salvar
+        <Icon right>
+          send
+        </Icon>
+        </Button>
+          
+        <Button
+          node="button"
+          type="reset"
+          waves="light"
+          className="btn orange darken-4"
+        >
+          Limpar
+        <Icon right>
+          delete
+        </Icon>
+        </Button>
       </div>
     </div>
   </form>
