@@ -60,7 +60,6 @@ function Viatura() {
                     <Button
                     node="button"
                     type="submit"
-                    waves="light"
                     className="btn orange darken-4"
                     name="action"
                     >
@@ -73,7 +72,6 @@ function Viatura() {
                     <Button
                     node="button"
                     type="reset"
-                    waves="light"
                     className="btn orange darken-4"
                     >
                     Limpar

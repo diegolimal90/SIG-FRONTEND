@@ -11,14 +11,16 @@
 }
 
 /****** CLASSES AUXILIARES*/
-html {
-    line-height: initial;
-}
+/****** ALL*/
+    html {
+        line-height: initial;
+    }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-}
+    body {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+    }
+/****** ALL*/
 
 .logo-nova {
     width: 100px;
@@ -88,4 +90,8 @@ hr {
     flex-direction: row;
     justify-content: center;
     align-self: center;
+}
+
+button.btn {
+    margin: 0 5px;
 }

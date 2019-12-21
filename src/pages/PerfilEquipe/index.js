@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../assets/css/style.css';
-import {Textarea, Select} from "react-materialize";
+import {Select, Button, Icon, TextInput} from "react-materialize";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -13,13 +13,6 @@ const MenuProps = {
     },
 };
 
-const names = [
-    'Motorista',
-    'Técnico em Enfermagem',
-    'Enfermeiro',
-    'Médico Generalista',
-    'Médico Pediatra/Neonatal',
-];
 
 function getStyles(name, personName, theme) {
     return {
@@ -37,43 +30,101 @@ function PerfilEquipe() {
                 <p className="center titulo">Cadastro do tipo perfil de equipes</p>
             </div>
             <div className="row">
-                <div className="col s8 input-field">
-                    <input id="nomePerfil" type="text" class="validate" />
-                    <label for="nomePerfil">Nome do perfil</label>
-                </div>
-                <div className="col s4 input-field">
-                    <input id="siglaPerfil" type="text" class="validate" />
-                    <label for="siglaPerfil">Sigla do perfil</label>
-                </div>
-                <div className="col s2 input-field">
-                    <input id="qtdProfissional" type="number" class="validate" />
-                    <label for="qtdProfissional">Qtd Profissionais</label>
-                </div>
-                <Select label="Tipo Profissional" onChange={function noRefCheck(){}} s={6} class="validate" >
-                    <option value="1">Motorista</option>
-                    <option value="2">Técnico em Enfermagem</option>
-                    <option value="3">Enfermeiro</option>
-                    <option value="4">Médico Generalista</option>
-                    <option value="5">Médico Pediatra/Neonatal</option>
+                <TextInput
+                    id="nome"
+                    name="nome"
+                    s="8"
+                    type="text"
+                    maxlength="65"
+                    required
+                    validate="true"
+                    label="Nome Perfil"
+                />
+                <TextInput
+                    id="sigla"
+                    name="sigla"
+                    s="4"
+                    type="text"
+                    maxlength="5"
+                    required
+                    validate="true"
+                    label="Sigla Perfil"
+                />
+                <TextInput
+                    id="qtdProfissional"
+                    name="qtdProfissional"
+                    s="2"
+                    type="number"
+                    maxlength="10"
+                    min="0"
+                    max="9999999999"
+                    required
+                    validate="true"
+                    label="Qtd Profissionais"
+                />
+                <Select multiple label="Tipo Profissional" onChange={function noRefCheck() { }} s={10} className="validate" >
+                    <option value="Motorista">Motorista</option>
+                    <option value="Técnico em Enfermagem">Técnico em Enfermagem</option>
+                    <option value="Enfermeiro">Enfermeiro</option>
+                    <option value="Médico Generalista">Médico Generalista</option>
+                    <option value="Médico Pediatra/Neonatal">Médico Pediatra/Neonatal</option>
                 </Select>
-                <div className="col s4 input-field">
-                    <input id="veiculo" type="text" class="validate" />
-                    <label for="veiculo">Veículo</label>
-                </div>
-                <div className="col s2 input-field">
-                    <input id="qtdEquipamentos" type="number" class="validate" />
-                    <label for="qtdEquipamentos">Qtd equipamentos</label>
-                </div>
-                <div className="col s10 input-field">
-                    <input id="equipamentos" type="text" class="validate" />
-                    <label for="equipamentos">Equipamentos</label>
-                </div>
+                <TextInput
+                    id="qtdEquipamentos"
+                    name="qtdEquipamentos"
+                    s="2"
+                    type="number"
+                    maxlength="10"
+                    min="0"
+                    max="9999999999"
+                    required
+                    validate="true"
+                    label="Qtd Equipamentos"
+                />
+                <TextInput
+                    id="equipamentos"
+                    name="equipamentos"
+                    s="8"
+                    type="text"
+                    maxlength="1000"
+                    required
+                    validate="true"
+                    label="Equipamentos"
+                />
+                <TextInput
+                    id="veiculo"
+                    name="veiculo"
+                    s="2"
+                    type="text"
+                    maxlength="50"
+                    required
+                    validate="true"
+                    label="Veículo"
+                />
             </div>
             <div className="row btn-salvar">
-                <button class="btn waves-effect waves-light orange darken-4" type="submit" name="action">Salvar
-    <i class="material-icons right">send</i>
-                </button>
-                <button class="btn waves-effect waves-light orange darken-4" type="reset">Limpar</button>
+                <Button
+                    node="button"
+                    type="submit"
+                    className="btn orange darken-4"
+                    name="action"
+                >
+                    Salvar
+                <Icon right>
+                        send
+                </Icon>
+                </Button>
+
+                <Button
+                    node="button"
+                    type="reset"
+                    className="btn orange darken-4"
+                >
+                    Limpar
+                <Icon right>
+                        delete
+                </Icon>
+                </Button>
             </div>
         </div>
     );

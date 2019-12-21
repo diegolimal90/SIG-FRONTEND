@@ -10,7 +10,7 @@ class Header extends Component {
             <Navbar 
                 className="grey"
                 alignLinks="right"
-                brand={<a className="brand-logo" href="#"><img className="logo-nova" src={logoNova}/></a>}
+                brand={<a className="brand-logo" href="#"><img className="logo-nova" src={logoNova} alt="Logo NOVA"/></a>}
                 menuIcon={<Icon>i</Icon>}
                 options={{
                     draggable: true,

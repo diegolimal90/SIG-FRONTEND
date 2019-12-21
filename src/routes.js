@@ -1,6 +1,6 @@
 import TelaPrincipal from "./pages/TelaPrincipal";
 import PerfilEquipe from "./pages/PerfilEquipe";
-import Viatura from "./pages/Viatura/Form";
+import ViaturaForm from "./pages/Viatura/Form";
 
 const routes = [
     {
