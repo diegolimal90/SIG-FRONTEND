@@ -1,44 +1,37 @@
 import React from "react";
 
-// TODO renderizar os options com os estados
+// TODO renderizar os options com um objeto json
 
-const optionsJson = 
-  [
-    {"nome": "Acre", "sigla": "AC"},
-    {"nome": "Alagoas", "sigla": "AL"},
-    {"nome": "Amapá", "sigla": "AP"},
-    {"nome": "Amazonas", "sigla": "AM"},
-    {"nome": "Bahia", "sigla": "BA"},
-    {"nome": "Ceará", "sigla": "CE"},
-    {"nome": "Distrito Federal", "sigla": "DF"},
-    {"nome": "Espírito Santo", "sigla": "ES"},
-    {"nome": "Goiás", "sigla": "GO"},
-    {"nome": "Maranhão", "sigla": "MA"},
-    {"nome": "Mato Grosso", "sigla": "MT"},
-    {"nome": "Mato Grosso do Sul", "sigla": "MS"},
-    {"nome": "Minas Gerais", "sigla": "MG"},
-    {"nome": "Pará", "sigla": "PA"},
-    {"nome": "Paraíba", "sigla": "PB"},
-    {"nome": "Paraná", "sigla": "PR"},
-    {"nome": "Pernambuco", "sigla": "PE"},
-    {"nome": "Piauí", "sigla": "PI"},
-    {"nome": "Rio de Janeiro", "sigla": "RJ"},
-    {"nome": "Rio Grande do Norte", "sigla": "RN"},
-    {"nome": "Rio Grande do Sul", "sigla": "RS"},
-    {"nome": "Rondônia", "sigla": "RO"},
-    {"nome": "Roraima", "sigla": "RR"},
-    {"nome": "Santa Catarina", "sigla": "SC"},
-    {"nome": "São Paulo", "sigla": "SP"},
-    {"nome": "Sergipe", "sigla": "SE"},
-    {"nome": "Tocantins", "sigla": "TO"}
-  ];
-
-function OptionUF ({optionsJson}){
-  return(
-    optionsJson.map(estado => {
-      <option value={estado.optionsJson.sigla}>{estado.optionsJson.nome}</option>
-    })
+  export default function OptionUF (){  
+  return (
+    <>
+      <option value="AC">Acre</option>
+      <option value="AL">Alagoas</option>
+      <option value="AP">Amapá</option>
+      <option value="AM">Amazonas</option>
+      <option value="BA">Bahia</option>
+      <option value="CE">Ceará</option>
+      <option value="DF">Distrito Federal</option>
+      <option value="ES">Espírito Santo</option>
+      <option value="GO">Goiás</option>
+      <option value="MA">Maranhão</option>
+      <option value="MT">Mato Grosso</option>
+      <option value="MS">Mato Grosso do Sul</option>
+      <option value="MG">Minas Gerais</option>
+      <option value="PA">Pará</option>
+      <option value="PB">Paraíba</option>
+      <option value="PR">Paraná</option>
+      <option value="PE">Pernambuco</option>
+      <option value="PI">Piauí</option>
+      <option value="RJ">Rio de Janeiro</option>
+      <option value="RN">Rio Grande do Norte</option>
+      <option value="RS">Rio Grande do Sul</option>
+      <option value="RO">Rondônia</option>
+      <option value="RR">Roraima</option>
+      <option value="SC">Santa Catarina</option>
+      <option value="SP">São Paulo</option>
+      <option value="SE">Sergipe</option>
+      <option value="TO">Tocantins</option>
+    </>
   )
 }
-
-export default OptionUF;
