@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import '../../assets/css/style.css';
 import { Select, Button, Icon, TextInput } from "react-materialize";
+import api from '../../service/api';
 
 
 function PerfilEquipe() {
@@ -23,14 +24,15 @@ function PerfilEquipe() {
             qtProfissionais: qtdProfissional,
             profissionaisId: tipoProfissional,
             descricaoEquipamentos: equipamentos,
-            qtEquipamento: qtdEquipamentos
+            qtEquipamento: qtdEquipamentos,
+            usuario_cadastro: 1
         });
 
         console.log(data);
 
-        /*await api.post('/perfilequipes', data,{
+        await api.post('/perfilequipes/', data,{
             headers:{'Content-Type': 'application/json'}
-        });*/
+        });
     }
 
     return (
