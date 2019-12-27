@@ -10,7 +10,7 @@ class Header extends Component {
             <Navbar 
                 className="grey"
                 alignLinks="right"
-                brand={<a className="brand-logo" href="#"><img className="logo-nova" src={logoNova} alt="Logo NOVA"/></a>}
+                brand={<a className="brand-logo" href="#/dashboard"><img className="logo-nova" src={logoNova} alt="Logo NOVA"/></a>}
                 menuIcon={<Icon>i</Icon>}
                 options={{
                     draggable: true,
@@ -29,7 +29,7 @@ class Header extends Component {
                     closeOnClick: true,
                     edge: 'right'
                     }}
-                    trigger={<a>Usuário <div className="img-perfil--usuario"></div></a>}
+                    trigger={<a className="user" href="/">Usuário <div className="img-perfil--usuario"></div></a>}
                 >
                     <SideNavItem
                         user={{
@@ -42,21 +42,21 @@ class Header extends Component {
                     <SideNavItem>
                         Profissionais
                     </SideNavItem>
-                    <SideNavItem href="#!second">
+                    <SideNavItem>
                         Equipes
                     </SideNavItem>
                     <SideNavItem divider />
                     <SideNavItem subheader>
                         Cadastros
                     </SideNavItem>
-                    <SideNavItem
-                        href="#!third"
-                        waves
-                    >
-                        Cadastro de profissional
-                    </SideNavItem>
-                    <SideNavItem>
+                    <SideNavItem href="#/dashboard/viatura/cadastrar">
                         Cadastro de viatura
+                    </SideNavItem>
+                    <SideNavItem href="#/dashboard/bases-e-unidades/cadastrar">
+                        Cadastro de unidades
+                    </SideNavItem>
+                    <SideNavItem href="#/dashboard/perfil-equipes/cadastrar">
+                        Cadastro de tipos de equipes
                     </SideNavItem>
                 </SideNav>                
             </Navbar>

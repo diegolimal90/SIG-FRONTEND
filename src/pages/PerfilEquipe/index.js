@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import '../../assets/css/style.css';
+import { Link } from "react-router-dom";
 import { Select, Button, Icon, TextInput } from "react-materialize";
 import api from '../../service/api';
 
@@ -30,13 +31,13 @@ function PerfilEquipe() {
 
         console.log(data);
 
-        await api.post('/perfilequipes/', data,{
-            headers:{'Content-Type': 'application/json'}
+        await api.post('/perfilequipes/', data, {
+            headers: { 'Content-Type': 'application/json' }
         });
     }
 
     return (
-        <div className="container">
+        <>
             <div className="row">
                 <p className="center titulo">Cadastro do tipo perfil de equipes</p>
             </div>
@@ -77,8 +78,8 @@ function PerfilEquipe() {
                         label="Qtd Profissionais"
                         value={qtdProfissional} onChange={event => setQtdProfissional(event.target.value)}
                     />
-                    <Select label="Tipo Profissional" onChange={function noRefCheck() { }} s={10} validate={true}
-                    onChange={event => setTipoProfissional(event.target.value)} value={tipoProfissional} required>
+                    <Select label="Tipo Profissional" s={10} validate={true}
+                        onChange={event => setTipoProfissional(event.target.value)} value={tipoProfissional} required>
                         <option value="" disabled>Selecione o tipo do prossional</option>
                         <option value="1">Motorista</option>
                         <option value="2">Técnico em Enfermagem</option>
@@ -126,28 +127,39 @@ function PerfilEquipe() {
                     <Button
                         node="button"
                         type="submit"
-                        className="btn orange darken-4"
+                        className="btn green"
                         name="action"
                     >
                         Salvar
-                <Icon right>
+                        <Icon right>
                             send
-                </Icon>
+                        </Icon>
                     </Button>
 
                     <Button
                         node="button"
                         type="reset"
-                        className="btn orange darken-4"
+                        className="btn blue"
                     >
                         Limpar
-                <Icon right>
+                        <Icon right>
                             delete
-                </Icon>
+                        </Icon>
                     </Button>
+                    <Link to="/dashboard">
+                        <Button
+                            waves="light"
+                            className="btn orange darken-4"
+                        >
+                            Cancelar
+                            <Icon right>
+                                cancel
+                            </Icon>
+                        </Button>
+                    </Link>
                 </div>
             </form>
-        </div>
+        </>
     );
 }
 

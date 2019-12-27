@@ -10,19 +10,26 @@ import captacao from '../../assets/images/captacao.png';
 import usuario from '../../assets/images/usuario.png';
 import paciente from '../../assets/images/paciente.png';
 import perfilEquipe from '../../assets/images/perfilEquipe.png';
+import Horario from '../../components/fragment/Horario';
 
 class TelaPrincipal extends Component {
 
   render() {
     return (
-      <div className="container">
+      <>
         <div className="row m-0">
-          <p className="center titulo">Painel administrativo</p>
-        </div>
+                <div className="col s6">
+                    <h6>Painel de Controle</h6>
+                </div>
+                <div className="col s6">
+                    <p className="right">Olá, Usuário  <Horario /></p>
+                </div>
+            </div>
+            <hr />
         <div className="row botoes-menu ">
           <div className="col s2 p-0 offset-s2">
             <Link to="/montar-equipe"><button>
-              <img className="icone" src={montarEquipe} alt="Icone de montar equipes"/>
+              <img className="icone mEquipe" src={montarEquipe} alt="Icone de montar equipes"/>
               <p className="center">Montar equipe</p>
             </button></Link>
           </div>
@@ -79,7 +86,7 @@ class TelaPrincipal extends Component {
             </button></Link>
           </div>
         </div>
-      </div>
+      </>
     )
   }
 

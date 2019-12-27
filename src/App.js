@@ -9,10 +9,8 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <div className="row m-0">
-          <div className="col s12">
+        <div className="container dashboard">
             <SubRoutes />
-          </div>
         </div>
         <Footer />
       </div>

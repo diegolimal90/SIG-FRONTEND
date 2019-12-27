@@ -7,7 +7,7 @@ class Footer extends Component {
         return (
             <footer>
                 <div className="row">
-                    <p className="white-text right-align texto-sigma">SIGMA - Todos os direitos reservados</p>
+                    <p className="white-text texto-sigma">SIGMA - Todos os direitos reservados</p>
                 </div>
             </footer>
         );
