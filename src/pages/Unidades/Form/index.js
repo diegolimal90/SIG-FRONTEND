@@ -1,22 +1,23 @@
 import React , {useState} from "react";
-import {TextInput,Textarea, Select, Button, Icon} from "react-materialize";
+import {TextInput,Textarea, Select, Button, Icon, CardPanel} from "react-materialize";
 import {Link} from "react-router-dom";
 import OptionUF from "./options.js";
-import api from "../../../service/api";
+import UnidadeService from "../../../service/UnidadeService.js";
+import '../../../assets/css/style.css';
 
-function UnidadeForm(){
-  const [tipo,setTipo] = useState('');
-  const [nome,setNome] = useState('');
-  const [cep,setCep] = useState('');
-  const [tipoLogradouro,setTipoLogradouro] = useState('');
-  const [logradouro,setLogradouro] = useState('');
-  const [numero,setNumero] = useState('');
-  const [complemento,setComplemento] = useState('');
-  const [estado,setEstado] = useState('');
-  const [cidade,setCidade] = useState('');
-  const [regiao,setRegiao] = useState('');
-  const [bairro,setBairro] = useState('');
-  const [referencia,setReferencia] = useState('');
+function UnidadeForm({ history }){
+  const [tipo,setTipo] = useState("");
+  const [nome,setNome] = useState("");
+  const [cep,setCep] = useState("");
+  const [tipoLogradouro,setTipoLogradouro] = useState("");
+  const [logradouro,setLogradouro] = useState("");
+  const [numero,setNumero] = useState("");
+  const [complemento,setComplemento] = useState("");
+  const [estado,setEstado] = useState("");
+  const [cidade,setCidade] = useState("");
+  const [regiao,setRegiao] = useState("");
+  const [bairro,setBairro] = useState("");
+  const [referencia,setReferencia] = useState("");
 
   async function handleSubmit(event){
     event.preventDefault();
@@ -37,14 +38,31 @@ function UnidadeForm(){
       usuario_cadastro : 1
     })
 
-    console.table(data);
+    await UnidadeService.prototype.cadastrarUnidade(data);
 
-    await api.post('/unidades/', data,{
-      headers:{'Content-Type': 'application/json'}
-    });
+    history.push('/dashboard')
+
+  }
+
+  function resetForm(){
+    setTipo("");
+    setNome("");
+    setCep("");
+    setTipoLogradouro("");
+    setLogradouro("");
+    setNumero("");
+    setComplemento("");
+    setEstado("");
+    setCidade("");
+    setRegiao("");
+    setBairro("");
+    setReferencia("");
   }
   
   return (
+    <CardPanel 
+      title="Cadastro da Bases e Unidades"
+    >
     <form onSubmit={handleSubmit}>
       <div className="container">
         <div className="row">
@@ -52,7 +70,9 @@ function UnidadeForm(){
         </div>
         
         <div className="row">
-          <Select label="Tipo de Unidade" value={tipo} onChange={event => setTipo(event.target.value)} s={6} required>
+          <Select label="Tipo de Unidade" title="Tipo de Unidade" value={tipo} onChange={event => setTipo(event.target.value)} 
+            s={12} m={6} required
+          >
             <option value="" disabled>Selecione...</option>
             <option value="base">Base</option>
             <option value="unidade">Unidade</option>
@@ -60,7 +80,9 @@ function UnidadeForm(){
           <TextInput
             id="nome"
             name="nome"
-            s={6}
+            title="Nome da Unidade"
+            s={12}
+            m={6}
             type="text"
             maxLength={65}            
             required
@@ -72,7 +94,9 @@ function UnidadeForm(){
           <TextInput
             id="cep"
             name="cep"
-            s={3}
+            title="CEP da Unidade"
+            s={12}
+            m={3}
             type="number"
             min="0"
             max="99999999"
@@ -86,7 +110,9 @@ function UnidadeForm(){
           <TextInput
             id="tipo_logradouro"
             name="tipo_logradouro"
-            s={3}
+            title="Tipo de Logradouro da Unidade"
+            s={12}
+            m={3}
             type="text"
             maxLength={12}            
             required
@@ -98,7 +124,9 @@ function UnidadeForm(){
           <TextInput
             id="logradouro"
             name="logradouro"
-            s={6}
+            title="Logradouro da Unidade"
+            s={12}
+            m={6}
             type="text"
             maxLength={50}            
             required
@@ -110,7 +138,9 @@ function UnidadeForm(){
           <TextInput
             id="numero"
             name="numero"
-            s={3}
+            title="Número do Logradouro"
+            s={12}
+            m={3}
             type="number"
             maxLength={10}            
             min="0"
@@ -124,7 +154,9 @@ function UnidadeForm(){
           <TextInput
             id="complemento"
             name="complemento"
-            s={3}
+            title="Complemento do Logradouro"
+            s={12}
+            m={3}
             type="text"
             maxLength={50}            
             validate={true}
@@ -132,14 +164,18 @@ function UnidadeForm(){
             value={complemento}
             onChange={event => setComplemento(event.target.value)}
           />
-          <Select label="Estado/UF" value={estado} onChange={event => setEstado(event.target.value)} s={6} required>
+          <Select label="Estado/UF" title="Estado do Logradouro" value={estado} onChange={event => setEstado(event.target.value)} 
+            s={12} m={6} required
+          >
             <option value="" disabled>Selecione...</option>
             <OptionUF />
           </Select>
           <TextInput
             id="cidade"
             name="cidade"
-            s={4}
+            title="Cidade do Logradouro"
+            s={12}
+            m={4}
             type="text"
             maxLength={50}           
             required
@@ -151,10 +187,11 @@ function UnidadeForm(){
           <TextInput
             id="regiao"
             name="regiao"
-            s={4}
+            title="Região do Logradouro"
+            s={12}
+            m={4}
             type="text"
             maxLength={30}            
-            required
             validate={true}
             label="Região"
             value={regiao}
@@ -163,7 +200,9 @@ function UnidadeForm(){
           <TextInput
             id="bairro"
             name="bairro"
-            s={4}
+            title="Bairro do Logradouro"
+            s={12}
+            m={4}
             type="text"
             maxLength={30}
             required
@@ -173,8 +212,10 @@ function UnidadeForm(){
             onChange={event => setBairro(event.target.value)}
           />
           <Textarea 
-            label="Ponto de Referência" 
+            label="Ponto de Referência"
+            title="Ponto de Referência da Unidade" 
             s={12}
+            m={12}
             name="referencia"
             id="referencia"
             maxLength={200}
@@ -187,19 +228,20 @@ function UnidadeForm(){
         <Button
           node="button"
           type="submit"
-          className="btn orange darken-4"
+          className="btn green"
           name="action"
         >
           Salvar
         <Icon right>
-          send
+          save
         </Icon>
         </Button>
           
         <Button
           node="button"
           type="reset"
-          className="btn orange darken-4"
+          className="btn blue"
+          onClick={() => resetForm()}
         >
           Limpar
         <Icon right>
@@ -220,6 +262,7 @@ function UnidadeForm(){
       </div>
     </div>
   </form>
+  </CardPanel>
   );
 }
 
