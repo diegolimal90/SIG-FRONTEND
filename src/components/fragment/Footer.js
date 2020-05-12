@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-
+import Horario from './Horario';
 
 class Footer extends Component {
 
     render() {
         return (
-            <footer>
+            <footer className="light-blue darken-4">
                 <div className="row">
-                    <p className="white-text texto-sigma">SIGMA - Todos os direitos reservados</p>
+                    <Horario />
                 </div>
             </footer>
         );

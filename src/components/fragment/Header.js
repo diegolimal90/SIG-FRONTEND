@@ -8,10 +8,10 @@ class Header extends Component {
     render() {
         return (
             <Navbar 
-                className="grey"
-                alignLinks="right"
-                brand={<a className="brand-logo" href="#/dashboard"><img className="logo-nova" src={logoNova} alt="Logo NOVA"/></a>}
-                menuIcon={<Icon>i</Icon>}
+                className="light-blue darken-4"
+                alignLinks="left"
+                brand={<a className="brand-logo right" href="#/dashboard"><img className="logo-nova" src={logoNova} alt="Logo NOVA"/></a>}
+                menuIcon={<Icon>menu</Icon>}
                 options={{
                     draggable: true,
                     edge: 'left',
@@ -27,36 +27,35 @@ class Header extends Component {
                 <SideNav
                     options={{
                     closeOnClick: true,
-                    edge: 'right'
+                    edge: 'left'
                     }}
-                    trigger={<a className="user" href="/">Usuário <div className="img-perfil--usuario"></div></a>}
+                    trigger={<a className="user" href="/"><Icon>menu</Icon></a>}
                 >
                     <SideNavItem
                         user={{
                             background: 'https://placeimg.com/640/480/tech',
-                            email: 'renan.scalanti@hotmail.com',
-                            name: 'Renan Scalanti'
+                            email: 'admin_sigma@sigma.com',
+                            name: 'Administrador'
                         }}
                     userView
                     />
-                    <SideNavItem>
+                    <SideNavItem href="#/dashboard">
                         Profissionais
                     </SideNavItem>
-                    <SideNavItem>
+                    <SideNavItem href="#/dashboard">
+                        Usuário
+                    </SideNavItem>
+                    <SideNavItem href="#/dashboard">
                         Equipes
                     </SideNavItem>
-                    <SideNavItem divider />
-                    <SideNavItem subheader>
-                        Cadastros
-                    </SideNavItem>
                     <SideNavItem href="#/dashboard/viatura/cadastrar">
-                        Cadastro de viatura
+                        Viatura
                     </SideNavItem>
                     <SideNavItem href="#/dashboard/bases-e-unidades/cadastrar">
-                        Cadastro de unidades
+                        Unidades
                     </SideNavItem>
                     <SideNavItem href="#/dashboard/perfil-equipes/cadastrar">
-                        Cadastro de tipos de equipes
+                        Tipos de equipes
                     </SideNavItem>
                 </SideNav>                
             </Navbar>

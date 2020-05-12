@@ -7,13 +7,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Header />
         <div className="container dashboard">
             <SubRoutes />
         </div>
         <Footer />
-      </div>
+      </>
     );
   }
 }

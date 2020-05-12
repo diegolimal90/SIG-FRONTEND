@@ -25,7 +25,10 @@ class Horario extends Component {
 
   render() {
     return (
-      <span>{this.state.date.toLocaleTimeString()}</span>
+      <p className="white-text texto-sigma" >{this.state.date.toLocaleTimeString(navigator.language, {
+        hour: '2-digit', 
+        minute:'2-digit'
+      })}</p>
     );
   }
 }
